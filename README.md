@@ -6,6 +6,10 @@ GRANT USAGE ON *.* TO 'admin'@'localhost' IDENTIFIED BY PASSWORD '*2FF39B0E6DF56
 
 GRANT SELECT, INSERT, UPDATE, DELETE ON `noti`.* TO 'admin'@'localhost';
 
+Puede que necesites algo de esto tambien segun el servidor de mysql:
+SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+set global sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+
 ###########################
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
